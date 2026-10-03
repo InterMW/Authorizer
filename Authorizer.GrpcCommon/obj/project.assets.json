@@ -431,14 +431,14 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Authorizer.Domain/1.0.0": {
+      "InterMW.Authorizer.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         }
       }
     }
@@ -1246,7 +1246,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Authorizer.Domain/1.0.0": {
+    "InterMW.Authorizer.Domain/1.0.2": {
       "type": "project",
       "path": "../Authorizer.Domain/Authorizer.Domain.csproj",
       "msbuildProject": "../Authorizer.Domain/Authorizer.Domain.csproj"
@@ -1254,19 +1254,19 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Authorizer.Domain >= 1.0.0",
       "Grpc.AspNetCore >= 2.84.0",
-      "Grpc.StatusProto >= 2.84.0"
+      "Grpc.StatusProto >= 2.84.0",
+      "InterMW.Authorizer.Domain >= 1.0.2"
     ]
   },
   "packageFolders": {
     "/home/jbmelberg/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj",
-      "projectName": "Authorizer.GrpcCommon",
+      "projectName": "InterMW.Authorizer.GrpcCommon",
       "projectPath": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj",
       "packagesPath": "/home/jbmelberg/.nuget/packages/",
       "outputPath": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/",

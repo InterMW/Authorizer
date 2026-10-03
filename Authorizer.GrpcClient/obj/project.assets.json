@@ -431,29 +431,29 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Authorizer.Domain/1.0.0": {
+      "InterMW.Authorizer.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         }
       },
-      "Authorizer.GrpcCommon/1.0.0": {
+      "InterMW.Authorizer.GrpcCommon/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Authorizer.Domain": "1.0.0",
           "Grpc.AspNetCore": "2.84.0",
-          "Grpc.StatusProto": "2.84.0"
+          "Grpc.StatusProto": "2.84.0",
+          "InterMW.Authorizer.Domain": "1.0.2"
         },
         "compile": {
-          "bin/placeholder/Authorizer.GrpcCommon.dll": {}
+          "bin/placeholder/InterMW.Authorizer.GrpcCommon.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Authorizer.GrpcCommon.dll": {}
+          "bin/placeholder/InterMW.Authorizer.GrpcCommon.dll": {}
         }
       }
     }
@@ -1261,12 +1261,12 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Authorizer.Domain/1.0.0": {
+    "InterMW.Authorizer.Domain/1.0.2": {
       "type": "project",
       "path": "../Authorizer.Domain/Authorizer.Domain.csproj",
       "msbuildProject": "../Authorizer.Domain/Authorizer.Domain.csproj"
     },
-    "Authorizer.GrpcCommon/1.0.0": {
+    "InterMW.Authorizer.GrpcCommon/1.0.2": {
       "type": "project",
       "path": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj",
       "msbuildProject": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj"
@@ -1274,19 +1274,19 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Authorizer.Domain >= 1.0.0",
-      "Authorizer.GrpcCommon >= 1.0.0",
-      "Grpc.AspNetCore >= 2.84.0"
+      "Grpc.AspNetCore >= 2.84.0",
+      "InterMW.Authorizer.Domain >= 1.0.2",
+      "InterMW.Authorizer.GrpcCommon >= 1.0.2"
     ]
   },
   "packageFolders": {
     "/home/jbmelberg/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcClient/Authorizer.GrpcClient.csproj",
-      "projectName": "Authorizer.GrpcClient",
+      "projectName": "InterMW.Authorizer.GrpcClient",
       "projectPath": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcClient/Authorizer.GrpcClient.csproj",
       "packagesPath": "/home/jbmelberg/.nuget/packages/",
       "outputPath": "/home/jbmelberg/Git/Authorizer/Authorizer.GrpcClient/obj/",

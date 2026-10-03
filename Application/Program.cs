@@ -32,7 +32,7 @@ builder.Services.AddOptions<JWTOptions>()
 
 var app = builder.Build();
 app.MapGrpcService<AuthorizerGrpcServer>().RequireHost("*:6000");
-app.UseCors();
+app.UseCors("MyPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -45,7 +45,7 @@ if (app.Environment.IsDevelopment())
 app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices]IAuthorizerDomainService domainservice) => 
     {
       return domainservice.Login(login.Username, login.Password);
-    }).RequireCors("MyPolicy");
+    });
 
 
 app.Run();

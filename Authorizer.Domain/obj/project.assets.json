@@ -11,10 +11,10 @@
     "/home/jbmelberg/.nuget/packages/": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "/home/jbmelberg/Git/Authorizer/Authorizer.Domain/Authorizer.Domain.csproj",
-      "projectName": "Authorizer.Domain",
+      "projectName": "InterMW.Authorizer.Domain",
       "projectPath": "/home/jbmelberg/Git/Authorizer/Authorizer.Domain/Authorizer.Domain.csproj",
       "packagesPath": "/home/jbmelberg/.nuget/packages/",
       "outputPath": "/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/",

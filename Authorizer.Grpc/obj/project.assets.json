@@ -526,36 +526,11 @@
           }
         }
       },
-      "Authorizer.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "compile": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
-        }
-      },
-      "Authorizer.GrpcCommon/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v10.0",
-        "dependencies": {
-          "Authorizer.Domain": "1.0.0",
-          "Grpc.AspNetCore": "2.84.0",
-          "Grpc.StatusProto": "2.84.0"
-        },
-        "compile": {
-          "bin/placeholder/Authorizer.GrpcCommon.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Authorizer.GrpcCommon.dll": {}
-        }
-      },
       "DomainService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Authorizer.Domain": "1.0.0",
+          "InterMW.Authorizer.Domain": "1.0.2",
           "Microsoft.Extensions.Options": "10.0.12",
           "System.IdentityModel.Tokens.Jwt": "8.23.0"
         },
@@ -564,6 +539,31 @@
         },
         "runtime": {
           "bin/placeholder/DomainService.dll": {}
+        }
+      },
+      "InterMW.Authorizer.Domain/1.0.2": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
+        }
+      },
+      "InterMW.Authorizer.GrpcCommon/1.0.2": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Grpc.AspNetCore": "2.84.0",
+          "Grpc.StatusProto": "2.84.0",
+          "InterMW.Authorizer.Domain": "1.0.2"
+        },
+        "compile": {
+          "bin/placeholder/InterMW.Authorizer.GrpcCommon.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InterMW.Authorizer.GrpcCommon.dll": {}
         }
       }
     }
@@ -1529,26 +1529,26 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "Authorizer.Domain/1.0.0": {
-      "type": "project",
-      "path": "../Authorizer.Domain/Authorizer.Domain.csproj",
-      "msbuildProject": "../Authorizer.Domain/Authorizer.Domain.csproj"
-    },
-    "Authorizer.GrpcCommon/1.0.0": {
-      "type": "project",
-      "path": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj",
-      "msbuildProject": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj"
-    },
     "DomainService/1.0.0": {
       "type": "project",
       "path": "../DomainService/DomainService.csproj",
       "msbuildProject": "../DomainService/DomainService.csproj"
+    },
+    "InterMW.Authorizer.Domain/1.0.2": {
+      "type": "project",
+      "path": "../Authorizer.Domain/Authorizer.Domain.csproj",
+      "msbuildProject": "../Authorizer.Domain/Authorizer.Domain.csproj"
+    },
+    "InterMW.Authorizer.GrpcCommon/1.0.2": {
+      "type": "project",
+      "path": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj",
+      "msbuildProject": "../Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Authorizer.GrpcCommon >= 1.0.0",
-      "DomainService >= 1.0.0"
+      "DomainService >= 1.0.0",
+      "InterMW.Authorizer.GrpcCommon >= 1.0.2"
     ]
   },
   "packageFolders": {

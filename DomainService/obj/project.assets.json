@@ -169,14 +169,14 @@
           }
         }
       },
-      "Authorizer.Domain/1.0.0": {
+      "InterMW.Authorizer.Domain/1.0.2": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Authorizer.Domain.dll": {}
+          "bin/placeholder/InterMW.Authorizer.Domain.dll": {}
         }
       }
     }
@@ -522,7 +522,7 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "Authorizer.Domain/1.0.0": {
+    "InterMW.Authorizer.Domain/1.0.2": {
       "type": "project",
       "path": "../Authorizer.Domain/Authorizer.Domain.csproj",
       "msbuildProject": "../Authorizer.Domain/Authorizer.Domain.csproj"
@@ -530,7 +530,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Authorizer.Domain >= 1.0.0",
+      "InterMW.Authorizer.Domain >= 1.0.2",
       "Microsoft.Extensions.Options >= 10.0.12",
       "System.IdentityModel.Tokens.Jwt >= 8.23.0"
     ]
