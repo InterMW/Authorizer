@@ -13,7 +13,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Authorizer.GrpcClient</PackageId>
+    <PackageId>InterMW.Authorizer.GrpcClient</PackageId>
     <Version>1.0.2</Version>
     <Authors>Joseph Melberg</Authors>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
