@@ -1,0 +1,85 @@
+name: Authorizer Domain CI-CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  push-package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: show
+      run: echo $vers
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: \d*\.\d*\.(\d*)\</Version
+        replace: 8.0.${{ github.run_number }}</Version
+    - name: Prepare
+      run: mkdir output
+    - name: Pack 
+      run: dotnet pack -o output --configuration Release 
+    - name: Push
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGET_API_KEY}}
+  build-publish:
+    needs: push-package
+    runs-on: ubuntu-latest
+    env:
+      DOCKERFILE: Dockerfile
+      PROJECT: Application/Application.csproj
+      APPSETTINGS: Application/appsettings.json
+      REPLACESETTINGS: Application/Deployment/appsettings.Production.json
+      TAG: interauthorizer
+    steps:
+     - uses: actions/checkout@v2
+     - 
+      uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '#{'
+        tokenSuffix: '}'
+        files: '["${{env.REPLACESETTINGS}}"]'
+      env:
+        ISSUER : http://auth.centurionx.net
+        JWTKEY : ${{secrets.JWTKEY}}
+        HASHPASS: ${{secrets.IPAPIKEY}}
+     - 
+      name: Replace Appsettings
+      run: cp ${{env.REPLACESETTINGS}} ${{env.APPSETTINGS}}
+     - name: Docker Login
+       uses: docker/login-action@v3.0.0
+       with:
+        registry: ${{secrets.DOCKER_HOST}}
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_PASSWORD}}      
+     - name: Build and push Docker images
+  # You may pin to the exact commit or the version.
+  # uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56
+       uses: docker/build-push-action@v5.1.0
+       with:
+            context: ./
+            file: Dockerfile
+            push: true
+            tags: |
+              ${{secrets.DOCKER_HOST}}/${{env.TAG}}
+  deploy:
+    needs: build-publish
+    runs-on: ubuntu-latest
+    env:
+      TAG: interauthorizer
+    steps:
+     - name: SSH Command
+    # uses: nekiro/ssh-job@e0d177751aced5bcaf110ce4d782a681e5e12856
+       uses: nekiro/ssh-job@v1.0.5
+       with:
+        command:  docker pull ${{secrets.DOCKER_HOST}}/${{env.TAG}}; docker stop ${{env.TAG}}; docker rm ${{env.TAG}}; docker run --name ${{env.TAG}} --restart=unless-stopped --net inter_network -m=500m -d ${{secrets.DOCKER_HOST}}/${{env.TAG}}; 
+        host: ${{secrets.HOST}}
+        user: ${{secrets.CENTURION_USERNAME}}
+        password: ${{secrets.CENTURION_PASSWORD}}
