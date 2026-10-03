@@ -78,7 +78,7 @@ jobs:
               ${{secrets.DOCKER_HOST}}/${{env.TAG}}
   deploy:
     needs: build-publish
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       TAG: interauthorizer
     steps:
