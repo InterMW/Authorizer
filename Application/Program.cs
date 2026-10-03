@@ -42,9 +42,11 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+app.MapGet("/login", () => "Hello");
 
 app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices]IAuthorizerDomainService domainservice) => 
     {
+      Console.WriteLine("Made it?");
       return domainservice.Login(login.Username, login.Password);
     });
 
