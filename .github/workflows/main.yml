@@ -22,7 +22,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: \d*\.\d*\.(\d*)\</Version
-        replace: 8.0.${{ github.run_number }}</Version
+        replace: 10.0.${{ github.run_number }}</Version
     - name: Prepare
       run: mkdir output
     - name: Pack 
