@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package authorizer;
+
+service AuthorizerService {
+  rpc Verify (JWTMessage) returns (JWTValid) {
+  }
+}
+
+message JWTValid {
+  bool is_valid = 1;
+}
+
+message JWTMessage {
+  string token = 1;
+}
+
+message Empty {
+}

@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="Application/Application.csproj" />
+  <Project Path="Authorizer.Domain/Authorizer.Domain.csproj" />
+  <Project Path="Authorizer.Grpc/Authorizer.Grpc.csproj" />
+  <Project Path="Authorizer.GrpcClient/Authorizer.GrpcClient.csproj" />
+  <Project Path="Authorizer.GrpcCommon/Authorizer.GrpcCommon.csproj" />
+  <Project Path="Demo/Demo.csproj" />
+  <Project Path="DomainService/DomainService.csproj" />
+</Solution>

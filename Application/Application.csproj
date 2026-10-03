@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainService\DomainService.csproj" />
+    <ProjectReference Include="..\Authorizer.Domain\Authorizer.Domain.csproj" />
+    <ProjectReference Include="..\Authorizer.Grpc\Authorizer.Grpc.csproj" />
+  </ItemGroup>
+
+</Project>
