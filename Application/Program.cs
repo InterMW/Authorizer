@@ -15,10 +15,15 @@ builder.Services.AddCors(
         options.AddPolicy(name: "MyPolicy",
             builder => builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .SetIsOriginAllowed((host) => host switch 
+            .SetIsOriginAllowed((host) => 
+              {
+              Console.WriteLine(host);
+
+              return host switch 
               {
                "http://localhost:1808" or "https://wip.centurionx.net" or "https://www.centurionx.net" => true,
                _ => false
+              };
               }
               )
             );
