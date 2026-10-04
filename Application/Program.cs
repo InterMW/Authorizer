@@ -67,11 +67,21 @@ app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices] IAuthorizerDo
           return Task.FromResult(Results.Unauthorized());
       }
 
-          return Task.FromResult(Results.Ok(result));
+          return Task.FromResult(Results.Ok(new KeyThing
+                {
+                Key = result
+                }));
     }).RequireCors("MyPolicy");
 
 
 app.Run();
+
+public class KeyThing 
+{
+    [JsonPropertyName("key")]
+    public string Key { get; set;}
+}
+
 
 public class LoginInfo
 {
