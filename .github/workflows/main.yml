@@ -56,7 +56,7 @@ jobs:
       env:
         ISSUER : http://auth.centurionx.net
         JWTKEY : ${{secrets.JWTKEY}}
-        HASHPASS: ${{secrets.IPAPIKEY}}
+        HASHPASS: ${{secrets.HASHPASS}}
      - 
       name: Replace Appsettings
       run: cp ${{env.REPLACESETTINGS}} ${{env.APPSETTINGS}}
