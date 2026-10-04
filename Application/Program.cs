@@ -19,11 +19,16 @@ builder.Services.AddCors(
               {
               Console.WriteLine(host);
 
-              return host switch 
+              var valuee = host switch 
               {
                "http://localhost:1808" or "https://wip.centurionx.net" or "https://www.centurionx.net" => true,
                _ => false
               };
+
+              Console.WriteLine(valuee);
+
+                return valuee;
+
               }
               )
             );
