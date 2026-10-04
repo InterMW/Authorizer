@@ -14,9 +14,14 @@ builder.Services.AddCors(
     {
         options.AddPolicy(name: "MyPolicy",
             builder => builder.AllowAnyHeader()
-                              .AllowAnyMethod()
-                              .SetIsOriginAllowed((host) => true)
-                              .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyOrigin()
+
+            // builder => builder.AllowAnyHeader()
+            //                   .WithMethods("GET", "OPTION", "POST")
+            //                   .SetIsOriginAllowed((host) => true)
+            //                   .AllowCredentials()
+            //builder => builder.WithOrigins("http://localhost:1808/")
             );
     }
 );
@@ -32,6 +37,7 @@ builder.Services.AddOptions<JWTOptions>()
       .ValidateDataAnnotations();
 
 var app = builder.Build();
+app.UseRouting();
 app.MapGrpcService<AuthorizerGrpcServer>().RequireHost("*:6000");
 app.UseCors("MyPolicy");
 
@@ -42,13 +48,18 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-app.MapGet("/login", () => "Hello");
 
 app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices]IAuthorizerDomainService domainservice) => 
     {
       Console.WriteLine("Made it?");
-      return domainservice.Login(login.Username, login.Password);
-    });
+      var result = domainservice.Login(login.Username, login.Password);
+      if (string.IsNullOrEmpty(result))
+      {
+          return "nope";
+      }
+
+      return result;
+    }).RequireCors("MyPolicy");
 
 
 app.Run();
