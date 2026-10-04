@@ -1,0 +1,12 @@
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/bin/Debug/net10.0/Authorizer.Domain.deps.json
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/bin/Debug/net10.0/Authorizer.Domain.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/bin/Debug/net10.0/Authorizer.Domain.pdb
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.AssemblyInfoInputs.cache
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.AssemblyInfo.cs
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.csproj.CoreCompileInputs.cache
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.sourcelink.json
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/refint/Authorizer.Domain.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/Authorizer.Domain.pdb
+/home/jbmelberg/Git/Authorizer/Authorizer.Domain/obj/Debug/net10.0/ref/Authorizer.Domain.dll

@@ -1,0 +1,16 @@
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/bin/Debug/net10.0/Authorizer.GrpcCommon.deps.json
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/bin/Debug/net10.0/Authorizer.GrpcCommon.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/bin/Debug/net10.0/Authorizer.GrpcCommon.pdb
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/bin/Debug/net10.0/Authorizer.Domain.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/bin/Debug/net10.0/Authorizer.Domain.pdb
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.csproj.AssemblyReference.cache
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.GeneratedMSBuildEditorConfig.editorconfig
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.AssemblyInfoInputs.cache
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.AssemblyInfo.cs
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.csproj.CoreCompileInputs.cache
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.sourcelink.json
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authoriz.7BA11F44.Up2Date
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/refint/Authorizer.GrpcCommon.dll
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/Authorizer.GrpcCommon.pdb
+/home/jbmelberg/Git/Authorizer/Authorizer.GrpcCommon/obj/Debug/net10.0/ref/Authorizer.GrpcCommon.dll

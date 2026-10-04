@@ -15,13 +15,12 @@ builder.Services.AddCors(
         options.AddPolicy(name: "MyPolicy",
             builder => builder.AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowAnyOrigin()
-
-            // builder => builder.AllowAnyHeader()
-            //                   .WithMethods("GET", "OPTION", "POST")
-            //                   .SetIsOriginAllowed((host) => true)
-            //                   .AllowCredentials()
-            //builder => builder.WithOrigins("http://localhost:1808/")
+            .SetIsOriginAllowed((host) => host switch 
+              {
+               "http://localhost:1808" or "https://wip.centurionx.net" or "https://www.centurionx.net" => true,
+               _ => false
+              }
+              )
             );
     }
 );
@@ -49,16 +48,16 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 
-app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices]IAuthorizerDomainService domainservice) => 
+app.MapPost("/login", ([FromBody] LoginInfo login , [FromServices] IAuthorizerDomainService domainservice) => 
     {
-      Console.WriteLine("Made it?");
       var result = domainservice.Login(login.Username, login.Password);
+
       if (string.IsNullOrEmpty(result))
       {
-          return "nope";
+          return Task.FromResult(Results.Unauthorized());
       }
 
-      return result;
+          return Task.FromResult(Results.Ok(result));
     }).RequireCors("MyPolicy");
 
 

@@ -1,0 +1,16 @@
+/home/jbmelberg/Git/Authorizer/DomainService/bin/Debug/net10.0/DomainService.deps.json
+/home/jbmelberg/Git/Authorizer/DomainService/bin/Debug/net10.0/DomainService.dll
+/home/jbmelberg/Git/Authorizer/DomainService/bin/Debug/net10.0/DomainService.pdb
+/home/jbmelberg/Git/Authorizer/DomainService/bin/Debug/net10.0/Authorizer.Domain.dll
+/home/jbmelberg/Git/Authorizer/DomainService/bin/Debug/net10.0/Authorizer.Domain.pdb
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.csproj.AssemblyReference.cache
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.GeneratedMSBuildEditorConfig.editorconfig
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.AssemblyInfoInputs.cache
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.AssemblyInfo.cs
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.csproj.CoreCompileInputs.cache
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.sourcelink.json
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainSe.1D41D7A4.Up2Date
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.dll
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/refint/DomainService.dll
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/DomainService.pdb
+/home/jbmelberg/Git/Authorizer/DomainService/obj/Debug/net10.0/ref/DomainService.dll
