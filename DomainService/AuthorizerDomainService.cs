@@ -35,7 +35,7 @@ public class AuthorizerDomainService(IOptions<JWTOptions> jwtOptions): IAuthoriz
             jwtOptions.Value.Issuer,
             jwtOptions.Value.Issuer,
             claims,
-            expires: DateTime.Now.AddMinutes(120),
+            expires: DateTime.UtcNow.AddMinutes(120),
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -73,12 +73,27 @@ public class AuthorizerDomainService(IOptions<JWTOptions> jwtOptions): IAuthoriz
     private TokenValidationParameters GetValidationParameters() =>
     new TokenValidationParameters()
     {
-        ValidateLifetime = false, 
+        LifetimeValidator = CustomLifetimeValidator,
         ValidateAudience = true,
         ValidateIssuer = true,
         ValidIssuer = jwtOptions.Value.Issuer,
         ValidAudience = jwtOptions.Value.Issuer,
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtOptions.Value.Key)) // The same key as the one that generate the token
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Value.Key)) // The same key as the one that generate the token
     };
+
+    public static bool CustomLifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken token, TokenValidationParameters validationParameters)
+    {
+        if (DateTime.UtcNow.AddMinutes(-120)  > notBefore)
+        {
+          return false;
+        }
+
+        if (DateTime.UtcNow > expires)
+        {
+          return false;
+        }
+
+        return true;
+    }
 }
 

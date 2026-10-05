@@ -1,10 +1,6 @@
-﻿using System.Net;
-using System.Security.Cryptography;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using Authorizer.GrpcClient;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 Console.WriteLine("Hello, World!");
 
@@ -28,7 +24,7 @@ using StringContent jsonContent = new(
         JsonSerializer.Serialize(new
         {
             user = "jbmelberg",
-            pass = "test"
+            pass = ""
         }),
         Encoding.UTF8,
         "application/json");
@@ -39,7 +35,7 @@ var output = await key.Content.ReadAsStringAsync();
 
 Console.WriteLine(output);
 
-var j = await cli.Verify(output);
+var j = await cli.Verify(output);//doesn't work because it's a different shape now, improve
 
 Console.WriteLine(j);
 
